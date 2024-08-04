@@ -39,8 +39,8 @@ public class Cliente extends Usuario {
 
     @Override
     public String toString() {
-        return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaSalud=" + sistemaSalud + ", direccion="
-                + direccion + ", comuna=" + comuna + ", edad=" + edad + ", toString()=" + super.toString() + "]";
+        return "Cliente ["+super.toString()+"telefono=" + telefono + ", afp=" + afp + ", sistemaSalud=" + sistemaSalud + ", direccion="
+                + direccion + ", comuna=" + comuna + ", edad=" + edad + "]";
     }
 
     public String getTelefono() {

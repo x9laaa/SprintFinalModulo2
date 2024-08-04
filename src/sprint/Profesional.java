@@ -24,8 +24,7 @@ public class Profesional extends Usuario {
 
     @Override
     public String toString() {
-        return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + ", toString()=" + super.toString()
-                + "]";
+        return "Profesional ["+ super.toString()+"titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
     }
 
     public String getTitulo() {

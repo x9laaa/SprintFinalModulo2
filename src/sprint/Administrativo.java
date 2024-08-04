@@ -24,8 +24,7 @@ public class Administrativo extends Usuario {
 
     @Override
     public String toString() {
-        return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + ", toString()="
-                + super.toString() + "]";
+        return "Administrativo ["+ super.toString()+ ", area=" + area + ", experienciaPrevia=" + experienciaPrevia + "]";
     }
 
     public String getArea() {
