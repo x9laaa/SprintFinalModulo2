@@ -1,19 +1,13 @@
-## Getting Started
+# Sistema de Gestión de Asesorías en Prevención de Riesgos Descripción del Proyecto
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este proyecto es un sistema de gestión para una empresa de asesorías en prevención de riesgos laborales. El objetivo es desarrollar una solución tecnológica que permita administrar, controlar y mejorar los procesos relacionados con la seguridad laboral en empresas del rubro industrial, minero y de construcción.
+Contexto
 
-## Folder Structure
+La empresa enfrenta problemas en la administración de información y coordinación de actividades de prevención de riesgos. Las dificultades incluyen:
 
-The workspace contains two folders by default, where:
+    - Falta de un sistema para gestionar la información y actividades.
+    - Problemas con la planificación y coordinación de visitas a terreno.
+    - Ausencia de registros adecuados de actividades realizadas.
+    - Dificultades para controlar los pagos y realizar seguimientos.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-# SprintFinalModulo2
+La solución busca implementar un sistema que facilite la planificación, ejecución y control de actividades, así como la gestión de clientes y profesionales. Este sistema también deberá generar reportes y estadísticas para mejorar la toma de decisiones y el rendimiento general.
