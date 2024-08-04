@@ -37,7 +37,12 @@ public class Cliente extends Usuario {
         System.out.println("Dirección: " + direccion + ", Comuna: " + comuna);
     }
 
-    // Getters y Setters
+    @Override
+    public String toString() {
+        return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaSalud=" + sistemaSalud + ", direccion="
+                + direccion + ", comuna=" + comuna + ", edad=" + edad + ", toString()=" + super.toString() + "]";
+    }
+
     public String getTelefono() {
         return telefono;
     }

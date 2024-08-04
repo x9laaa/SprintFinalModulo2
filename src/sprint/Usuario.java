@@ -24,6 +24,12 @@ public class Usuario implements Asesoria {
         int edad = Period.between(fechaNacimiento, LocalDate.now()).getYears();
         return "El usuario tiene " + edad + " años";
     }
+    
+    @Override
+    public String toString() {
+        return "Usuario [rut=" + rut + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento="
+                + fechaNacimiento + "]";
+    }
 
     @Override
     public void analizarUsuario() {
