@@ -1,15 +1,20 @@
 package sprint;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Profesional extends Usuario {
     private String titulo;
-    private String fechaIngreso;
+    private LocalDate fechaIngreso;
 
     public Profesional(int rut, String nombre, String apellido, LocalDate fechaNacimiento, String titulo,
-            String fechaIngreso) {
+            LocalDate fechaIngreso) {
         super(rut, nombre, apellido, fechaNacimiento);
-        this.titulo = titulo;
+        if (validLongTitulo(titulo)) {
+            this.titulo = titulo;
+        } else {
+            throw new IllegalArgumentException("El título debe tener entre 10 y 50 caracteres.");
+        }
         this.fechaIngreso = fechaIngreso;
     }
 
@@ -21,26 +26,31 @@ public class Profesional extends Usuario {
     }
 
     public void setTitulo(String titulo) {
-        validLongTitulo(titulo);
-        this.titulo = titulo;
+        if (validLongTitulo(titulo)) {
+            this.titulo = titulo;
+        } else {
+            throw new IllegalArgumentException("El título debe tener entre 10 y 50 caracteres.");
+        }
     }
 
-    public String getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
     private boolean validLongTitulo(String dato) {
         int dat = dato.length();
-        return (50 > dat && dat >= 10);
+        return dat < 50 && dat >= 10;
     }
 
     @Override
     public String toString() {
-        return "Profesional:[" + super.toString() + "] - [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = fechaIngreso.format(formatter);
+        return "Profesional:[" + super.toString() + "] - [titulo=" + titulo + ", fechaIngreso=" + formattedDate + "]";
     }
 
 }
