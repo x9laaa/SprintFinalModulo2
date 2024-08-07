@@ -62,6 +62,10 @@ public class Usuario implements Asesoria {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Usuario [rut=" + rut + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento="
+                + fechaNacimiento + "]";
+    }
 
 }
