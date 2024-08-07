@@ -28,7 +28,7 @@ public class Capacitacion {
     public Capacitacion() {
     }
 
-    private static final List<String> DIAS_VALIDOS = Arrays.asList(
+    private static final List<String> validDays = Arrays.asList(
             "lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo");
 
     public int getIdentificador() {
@@ -44,7 +44,7 @@ public class Capacitacion {
     }
 
     public void setDia(String dia) {
-        if (!DIAS_VALIDOS.contains(dia.toLowerCase())) {
+        if (!validDays.contains(dia.toLowerCase())) {
             throw new IllegalArgumentException("Día permitido entre “lunes” y “domingo”.");
         }
         this.dia = dia;
