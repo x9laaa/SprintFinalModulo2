@@ -1,6 +1,7 @@
 package sprint;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 public class Administrativo extends Usuario {
@@ -55,6 +56,11 @@ public class Administrativo extends Usuario {
 
     private boolean validLongExp(int lng) {
         return lng <= 100;
+    }
+
+    @Override
+    public String toString() {
+        return "Administrativo:[" + super.toString() + "] - [area=" + area + ", experiencia=" + experiencia + "]";
     }
 
 }
