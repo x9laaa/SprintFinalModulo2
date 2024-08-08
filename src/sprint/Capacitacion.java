@@ -19,7 +19,7 @@ public class Capacitacion {
         this.identificador = identificador;
         setDia(dia);
         this.hora = hora;
-        this.lugar = lugar;
+        setLugar(lugar);
         this.duracion = duracion;
         this.cantidad = cantidad;
         this.rutCliente = rutCliente;
@@ -63,6 +63,9 @@ public class Capacitacion {
     }
 
     public void setLugar(String lugar) {
+        if (validLugar(lugar) == false) {
+            throw new IllegalArgumentException("El lugar es obligatorio!!");
+        }
         this.lugar = lugar;
     }
 
@@ -79,6 +82,9 @@ public class Capacitacion {
     }
 
     public void setCantidad(int cantidad) {
+        if (validCant(cantidad) == false) {
+            throw new IllegalArgumentException("cantidad menor de 1000.");
+        }
         this.cantidad = cantidad;
     }
 
@@ -91,6 +97,14 @@ public class Capacitacion {
             throw new IllegalArgumentException("RUT cliente es obligatorio.");
         }
         this.rutCliente = rutCliente;
+    }
+
+    public boolean validLugar(String lugar) {
+        return lugar.isEmpty();
+    }
+
+    public boolean validCant(int num) {
+        return num < 1000;
     }
 
 }

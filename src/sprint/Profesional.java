@@ -53,4 +53,10 @@ public class Profesional extends Usuario {
         return "Profesional:[" + super.toString() + "] - [titulo=" + titulo + ", fechaIngreso=" + formattedDate + "]";
     }
 
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();
+        System.out.println("[titulo=" + titulo + ", fechaIngreso=\" + formattedDate + ");
+    }
+
 }
