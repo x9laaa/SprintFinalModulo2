@@ -62,4 +62,10 @@ public class Administrativo extends Usuario {
         return "Administrativo:[" + super.toString() + "] - [area=" + area + ", experiencia=" + experiencia + "]";
     }
 
+    @Override
+    public void analizarUsuario() {
+        super.analizarUsuario();
+        System.out.println("[area=" + area + ", experiencia= " + experiencia + "]");
+    }
+
 }

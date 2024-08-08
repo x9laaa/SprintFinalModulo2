@@ -107,4 +107,8 @@ public class Capacitacion {
         return num < 1000;
     }
 
+    public String mostrarDetalle() {
+        return "La capacitacion, sera en " + lugar + " a las " + hora + " del dia " + dia + ", y durará " + duracion
+                + " minutos";
+    }
 }
