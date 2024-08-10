@@ -2,6 +2,8 @@ package sprint;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class Accidente {
 
@@ -16,15 +18,15 @@ public class Accidente {
     public Accidente() {
     }
 
-    public Accidente(int identificador, int rutCliente, LocalDate dia, LocalTime hora, String lugar, String origen,
-            String consecuencias) {
-        this.identificador = identificador;
-        this.rutCliente = rutCliente;
-        this.dia = dia;
-        this.hora = hora;
-        this.lugar = lugar;
-        this.origen = origen;
-        this.consecuencias = consecuencias;
+    public Accidente(int identificador, int rutCliente, String dia, String hora, String lugar, String origen,
+                     String consecuencias) {
+        setIdentificador(identificador);
+        setRutCliente(rutCliente);
+        setDia(dia);
+        setHora(hora);
+        setLugar(lugar);
+        setOrigen(origen);
+        setConsecuencias(consecuencias);
     }
 
     @Override
@@ -38,6 +40,9 @@ public class Accidente {
     }
 
     public void setIdentificador(int identificador) {
+        if (identificador <= 0) {
+            throw new IllegalArgumentException("El identificador es obligatorio y debe ser un número positivo.");
+        }
         this.identificador = identificador;
     }
 
@@ -46,6 +51,9 @@ public class Accidente {
     }
 
     public void setRutCliente(int rutCliente) {
+        if (rutCliente <= 0) {
+            throw new IllegalArgumentException("El RUT del cliente es obligatorio y debe ser un número positivo.");
+        }
         this.rutCliente = rutCliente;
     }
 
@@ -53,16 +61,25 @@ public class Accidente {
         return dia;
     }
 
-    public void setDia(LocalDate dia) {
-        this.dia = dia;
+    public void setDia(String dia) {
+        try {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            this.dia = LocalDate.parse(dia, formatter);
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("La fecha debe ser válida y estar en formato DD/MM/YYYY.");
+        }
     }
 
     public LocalTime getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
+    public void setHora(String hora) {
+        try {
+            this.hora = LocalTime.parse(hora);
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("La hora debe ser válida y estar en formato HH:MM.");
+        }
     }
 
     public String getLugar() {
@@ -70,6 +87,9 @@ public class Accidente {
     }
 
     public void setLugar(String lugar) {
+        if (lugar == null || lugar.length() < 10 || lugar.length() > 50) {
+            throw new IllegalArgumentException("El lugar es obligatorio y debe tener entre 10 y 50 caracteres.");
+        }
         this.lugar = lugar;
     }
 
@@ -78,6 +98,9 @@ public class Accidente {
     }
 
     public void setOrigen(String origen) {
+        if (origen.length() > 100) {
+            throw new IllegalArgumentException("El origen no debe exceder los 100 caracteres.");
+        }
         this.origen = origen;
     }
 
@@ -86,7 +109,9 @@ public class Accidente {
     }
 
     public void setConsecuencias(String consecuencias) {
+        if (consecuencias.length() > 100) {
+            throw new IllegalArgumentException("Las consecuencias no deben exceder los 100 caracteres.");
+        }
         this.consecuencias = consecuencias;
     }
-
 }
