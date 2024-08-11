@@ -19,6 +19,13 @@ public class Usuario implements Asesoria {
     private int rut;
     private String nombre;
     private String apellido;
+
+    /*
+     * Dependency Inversion Principle (DIP)
+     * La clase Usuario depende de LocalDate en lugar de una implementación concreta
+     * de la fecha. Esto permite flexibilidad en el manejo de fechas, y se puede
+     * cambiar la implementación de fechas sin afectar a la clase Usuario.
+     */
     private LocalDate fechaNacimiento;
 
     /**
