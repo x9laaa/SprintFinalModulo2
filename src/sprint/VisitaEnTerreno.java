@@ -8,7 +8,7 @@ import java.time.format.DateTimeParseException;
 /**
  * Representa una visita en terreno realizada a un cliente.
  * Contiene la información sobre el día, hora, lugar y comentarios de la visita.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

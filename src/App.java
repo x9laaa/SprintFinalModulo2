@@ -10,7 +10,7 @@ import sprint.Profesional;
  * interactuar con las clases Cliente, Profesional, Administrativo y
  * Capacitacion.
  * Contiene un menú interactivo para gestionar usuarios y capacitaciones.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

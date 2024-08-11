@@ -6,6 +6,7 @@ package sprint;
  * la visita,
  * el nombre del revisador, un detalle adicional y el estado de la revisión.
  * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

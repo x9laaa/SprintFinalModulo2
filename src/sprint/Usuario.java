@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
  * La clase Usuario representa un usuario con RUT, nombre, apellido y fecha de
  * nacimiento.
  * Implementa la interfaz Asesoria para proveer análisis básico del usuario.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
  * La clase Accidente representa un accidente registrado en el sistema.
  * Incluye detalles como identificador, RUT del cliente, día, hora, lugar,
  * origen y consecuencias del accidente.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

@@ -6,7 +6,7 @@ import java.time.Period;
 /**
  * La clase Cliente extiende la clase Usuario y añade atributos específicos como
  * teléfono, AFP, sistema de salud, dirección, comuna y edad.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

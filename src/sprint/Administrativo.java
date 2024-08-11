@@ -4,7 +4,7 @@ package sprint;
  * La clase Administrativo extiende la clase Usuario y añade atributos
  * específicos
  * como área de trabajo y experiencia previa.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

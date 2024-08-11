@@ -10,7 +10,7 @@ import java.util.List;
  * Contiene información relevante como el identificador, RUT del cliente, día,
  * hora,
  * lugar, duración y cantidad de asistentes.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

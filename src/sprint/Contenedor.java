@@ -7,7 +7,7 @@ import java.util.List;
  * Representa un contenedor para gestionar usuarios y capacitaciones.
  * Permite almacenar, eliminar y listar usuarios, así como almacenar y listar
  * capacitaciones.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 

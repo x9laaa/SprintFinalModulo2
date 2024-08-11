@@ -7,7 +7,7 @@ import java.time.format.DateTimeParseException;
 /**
  * La clase Profesional extiende la clase Usuario y añade atributos específicos
  * como título y fecha de ingreso.
- * 
+ * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
 
