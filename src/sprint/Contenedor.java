@@ -3,15 +3,35 @@ package sprint;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa un contenedor para gestionar usuarios y capacitaciones.
+ * Permite almacenar, eliminar y listar usuarios, así como almacenar y listar
+ * capacitaciones.
+ * 
+ * @author Alex Carreño y Max Jeldres
+ */
+
 public class Contenedor {
 
     private List<Usuario> usuarios;
     private List<Capacitacion> capacitaciones;
 
+    /**
+     * Constructor por defecto.
+     * Inicializa las listas de usuarios y capacitaciones.
+     */
+
     public Contenedor() {
         usuarios = new ArrayList<>();
         capacitaciones = new ArrayList<>();
     }
+
+    /**
+     * Almacena un cliente en el contenedor.
+     * 
+     * @param cliente Cliente a almacenar.
+     * @throws IllegalArgumentException Si el cliente es nulo.
+     */
 
     public void almacenarCliente(Cliente cliente) {
         if (cliente != null) {
@@ -22,6 +42,13 @@ public class Contenedor {
         }
     }
 
+    /**
+     * Almacena un profesional en el contenedor.
+     * 
+     * @param profesional Profesional a almacenar.
+     * @throws IllegalArgumentException Si el profesional es nulo.
+     */
+
     public void almacenarProfesional(Profesional profesional) {
         if (profesional != null) {
             usuarios.add(profesional);
@@ -31,6 +58,13 @@ public class Contenedor {
         }
     }
 
+    /**
+     * Almacena un administrativo en el contenedor.
+     * 
+     * @param administrativo Administrativo a almacenar.
+     * @throws IllegalArgumentException Si el administrativo es nulo.
+     */
+
     public void almacenarAdministrativo(Administrativo administrativo) {
         if (administrativo != null) {
             usuarios.add(administrativo);
@@ -39,6 +73,17 @@ public class Contenedor {
             throw new IllegalArgumentException("Administrativo no puede ser nulo.");
         }
     }
+
+    /**
+     * Almacena una capacitación en el contenedor.
+     * Verifica que exista un cliente con el RUT proporcionado antes de almacenar la
+     * capacitación.
+     * 
+     * @param capacitacion Capacitación a almacenar.
+     * @throws IllegalArgumentException Si la capacitación es nula o si no se
+     *                                  encuentra un cliente con el RUT
+     *                                  proporcionado.
+     */
 
     public void almacenarCapacitacion(Capacitacion capacitacion) {
         if (capacitacion == null) {
@@ -61,6 +106,14 @@ public class Contenedor {
         }
     }
 
+    /**
+     * Elimina un usuario del contenedor por su RUT.
+     * 
+     * @param rut RUT del usuario a eliminar.
+     * @throws IllegalArgumentException Si el usuario no se encuentra en el
+     *                                  contenedor.
+     */
+
     public void eliminarUsuario(int rut) {
 
         if (usuarios.isEmpty()) {
@@ -75,6 +128,10 @@ public class Contenedor {
 
     }
 
+    /**
+     * Lista todos los usuarios registrados en el contenedor.
+     */
+
     public void listarUsuarios() {
         if (usuarios.isEmpty()) {
             System.out.println("No hay usuarios registrados.");
@@ -84,6 +141,12 @@ public class Contenedor {
             }
         }
     }
+
+    /**
+     * Lista todos los usuarios de un tipo específico.
+     * 
+     * @param tipo Clase del tipo de usuario a listar.
+     */
 
     public void listarUsuariosPorTipo(Class<?> tipo) {
         boolean encontrado = false;
@@ -97,6 +160,11 @@ public class Contenedor {
             System.out.println("No se encontraron usuarios del tipo: " + tipo.getSimpleName());
         }
     }
+
+    /**
+     * Lista todas las capacitaciones registradas en el contenedor.
+     * Muestra los clientes asociados a cada capacitación, si existen.
+     */
 
     public void listarCapacitaciones() {
         if (capacitaciones.isEmpty()) {

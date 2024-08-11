@@ -5,7 +5,23 @@ import sprint.Cliente;
 import sprint.Contenedor;
 import sprint.Profesional;
 
+/**
+ * La clase App es la clase principal que maneja el menú de opciones para
+ * interactuar con las clases Cliente, Profesional, Administrativo y
+ * Capacitacion.
+ * Contiene un menú interactivo para gestionar usuarios y capacitaciones.
+ * 
+ * @author Alex Carreño y Max Jeldres
+ */
+
 public class App {
+
+    /**
+     * Método principal que ejecuta el menú interactivo para gestionar los usuarios
+     * y capacitaciones.
+     * 
+     * @param args Argumentos de la línea de comandos (no utilizados).
+     */
 
     public static void main(String[] args) {
         Contenedor contenedor = new Contenedor();
@@ -176,6 +192,14 @@ public class App {
             }
         }
     }
+
+    /**
+     * Lee y valida una entrada de número entero desde el usuario.
+     * 
+     * @param scanner El objeto Scanner utilizado para leer la entrada del usuario.
+     * @param mensaje El mensaje que se muestra al usuario para pedir la entrada.
+     * @return Un número entero válido ingresado por el usuario.
+     */
 
     private static int leerInt(Scanner scanner, String mensaje) {
         while (true) {
