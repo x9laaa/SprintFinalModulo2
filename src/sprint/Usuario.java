@@ -9,6 +9,7 @@ import java.time.format.DateTimeParseException;
  * La clase Usuario representa un usuario con RUT, nombre, apellido y fecha de
  * nacimiento.
  * Implementa la interfaz Asesoria para proveer análisis básico del usuario.
+ * 
  * @version 1.0
  * @author Alex Carreño y Max Jeldres
  */
@@ -38,6 +39,12 @@ public class Usuario implements Asesoria {
      *                        caracteres.
      * @param fechaNacimiento La fecha de nacimiento del usuario en formato
      *                        DD/MM/YYYY.
+     */
+
+    /*
+     * Open/Closed Principle (OCP)
+     * Puedes agregar más validaciones o comportamientos específicos en métodos
+     * setters sin modificar el constructor.
      */
 
     public Usuario(int rut, String nombre, String apellido, String fechaNacimiento) {
@@ -75,6 +82,19 @@ public class Usuario implements Asesoria {
      * Analiza el usuario mostrando su nombre completo y RUT.
      */
 
+    /*
+     * Liskov Substitution Principle (LSP)
+     * Si Usuario tiene subclases, el método analizarUsuario() debería seguir
+     * funcionando de manera adecuada cuando se reemplace una instancia de Usuario
+     * por una de sus subclases.
+     */
+
+    /*
+     * Interface Segregation Principle (ISP)
+     * La interfaz Asesoria se enfoca en el análisis del usuario, y Usuario solo
+     * implementa los métodos que son relevantes para su contexto.
+     */
+
     @Override
     public void analizarUsuario() {
         System.out.println("Nombre: " + nombre + " " + apellido + ", RUT: " + rut);
@@ -97,6 +117,11 @@ public class Usuario implements Asesoria {
      * @throws IllegalArgumentException Si el RUT no es válido.
      */
 
+    /*
+     * Single Responsibility Principle (SRP)
+     * Este método se encarga únicamente de validar y establecer el RUT del usuario.
+     * Su responsabilidad es clara y específica.
+     */
     public void setRut(int rut) {
         if (rut <= 0 || rut > 99999999) {
             throw new IllegalArgumentException("El RUT debe ser un número positivo menor a 99.999.999");
@@ -168,6 +193,12 @@ public class Usuario implements Asesoria {
      * @param fechaNacimiento La fecha de nacimiento del usuario.
      * @throws IllegalArgumentException Si la fecha no es válida o no está en el
      *                                  formato correcto.
+     */
+
+    /*
+     * Open/Closed Principle (OCP)
+     * Puedes extender esta clase para manejar fechas en diferentes formatos o
+     * validaciones adicionales sin cambiar este método.
      */
 
     public void setFechaNacimiento(String fechaNacimiento) {
